@@ -11,38 +11,44 @@ size = Vector2(100, 140)
 script = ExtResource("1_5o1v1")
 
 [node name="cardFace" type="Sprite2D" parent="." unique_id=1414493483]
-visible = false
 z_index = 1
 texture = ExtResource("2_103l1")
 
 [node name="Rank" type="Label" parent="cardFace" unique_id=1758563631]
-offset_left = -39.0
-offset_top = -64.0
-offset_right = -22.0
-offset_bottom = -41.0
+offset_left = -38.0
+offset_top = -62.0
+offset_right = -19.0
+offset_bottom = -39.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "A"
+text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Rank2" type="Label" parent="cardFace" unique_id=684351413]
-offset_left = 41.0
-offset_top = 63.0
-offset_right = 58.0
-offset_bottom = 86.0
+offset_left = 38.0
+offset_top = 62.0
+offset_right = 57.0
+offset_bottom = 85.0
 rotation = 3.1415927
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "A"
+text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Suit" type="Label" parent="cardFace" unique_id=1515194746]
-offset_left = -20.0
-offset_top = -33.0
-offset_right = 20.0
-offset_bottom = -10.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -115.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 65
 text = "H"
 horizontal_alignment = 1
 vertical_alignment = 1

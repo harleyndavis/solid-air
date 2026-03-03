@@ -16,7 +16,7 @@ enum SuitColor {
 			$cardFace/Rank2.add_theme_color_override("font_color", Color.RED)
 		else:
 			color = SuitColor.Black
-		$cardFace/Suit.text = suit
+		$cardFace/Suit.text = process_suit()
 		
 @export var rank = 1:
 	set(new_value):
@@ -37,6 +37,14 @@ enum SuitColor {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
+	
+func process_suit() -> String:
+	match suit:
+		"S": return "♠"
+		"H": return "♥"
+		"D": return "♦"
+		"C": return "♣"
+		_: return ""
 
 func process_rank():
 	if rank == 11:

@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dj83tdck2e47c"]
+
+[ext_resource type="Texture2D" uid="uid://b1q7b5wlx25e2" path="res://CardPosition.png" id="1_j422m"]
+[ext_resource type="PackedScene" uid="uid://rcxc8brff6y" path="res://Scenes/PlayingCard/Card.tscn" id="2_xy18g"]
+[ext_resource type="PackedScene" uid="uid://ba5xhs5rwe15a" path="res://Scenes/DeckOfCards/Deck.tscn" id="3_xy18g"]
+
+[node name="Playmat" type="Node2D" unique_id=789484153]
+
+[node name="Playfield" type="HBoxContainer" parent="." unique_id=459424501]
+layout_direction = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 265.5
+offset_right = 1150.0
+offset_bottom = 520.5
+grow_vertical = 2
+
+[node name="CardPosition1" type="Sprite2D" parent="Playfield" unique_id=121899598]
+position = Vector2(100, 73)
+texture = ExtResource("1_j422m")
+
+[node name="CardPosition2" type="Sprite2D" parent="Playfield" unique_id=1604601342]
+position = Vector2(230, 73)
+texture = ExtResource("1_j422m")
+
+[node name="CardPosition3" type="Sprite2D" parent="Playfield" unique_id=466043138]
+position = Vector2(360, 73)
+texture = ExtResource("1_j422m")
+
+[node name="CardPosition4" type="Sprite2D" parent="Playfield" unique_id=1163312973]
+position = Vector2(490, 73)
+texture = ExtResource("1_j422m")
+
+[node name="CardPosition5" type="Sprite2D" parent="Playfield" unique_id=1428225724]
+position = Vector2(620, 73)
+texture = ExtResource("1_j422m")
+
+[node name="CardPosition6" type="Sprite2D" parent="Playfield" unique_id=1504305761]
+position = Vector2(750, 73)
+texture = ExtResource("1_j422m")
+
+[node name="CardPosition7" type="Sprite2D" parent="Playfield" unique_id=788836927]
+position = Vector2(880, 73)
+texture = ExtResource("1_j422m")
+
+[node name="Scoring1" type="Sprite2D" parent="." unique_id=49895291]
+position = Vector2(100, 100)
+texture = ExtResource("1_j422m")
+
+[node name="Scoring2" type="Sprite2D" parent="." unique_id=1002505532]
+position = Vector2(230, 100)
+texture = ExtResource("1_j422m")
+
+[node name="Scoring3" type="Sprite2D" parent="." unique_id=475956682]
+position = Vector2(360, 100)
+texture = ExtResource("1_j422m")
+
+[node name="Scoring4" type="Sprite2D" parent="." unique_id=1226604804]
+position = Vector2(490, 100)
+texture = ExtResource("1_j422m")
+
+[node name="DeckLocation" type="Sprite2D" parent="." unique_id=1166958212]
+position = Vector2(1036, 100)
+texture = ExtResource("1_j422m")
+
+[node name="Card" parent="." unique_id=1558260915 instance=ExtResource("2_xy18g")]
+position = Vector2(51, 270)
+suit = "C"
+rank = "5"
+
+[node name="Card2" parent="." unique_id=1737945271 instance=ExtResource("2_xy18g")]
+position = Vector2(181, 270)
+rank = "9"
+
+[node name="Card3" parent="." unique_id=324241353 instance=ExtResource("2_xy18g")]
+position = Vector2(311, 270)
+
+[node name="Card4" parent="." unique_id=879965202 instance=ExtResource("2_xy18g")]
+position = Vector2(441, 270)
+
+[node name="Card5" parent="." unique_id=1055061112 instance=ExtResource("2_xy18g")]
+position = Vector2(571, 270)
+
+[node name="Card6" parent="." unique_id=1610736617 instance=ExtResource("2_xy18g")]
+position = Vector2(701, 270)
+
+[node name="Card7" parent="." unique_id=511266605 instance=ExtResource("2_xy18g")]
+position = Vector2(831, 270)
+
+[node name="Deck" parent="." unique_id=623329177 node_paths=PackedStringArray("cards") instance=ExtResource("3_xy18g")]
+cards = [null, null]

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://rcxc8brff6y"]
+
+[ext_resource type="Script" uid="uid://dljg3gcfm8qbb" path="res://Scenes/PlayingCard/card.gd" id="1_5o1v1"]
+[ext_resource type="Texture2D" uid="uid://bbvw4soeyxhkc" path="res://CardFace.png" id="2_103l1"]
+[ext_resource type="Texture2D" uid="uid://badlsm0re1cgf" path="res://CardBack.png" id="3_xh4nr"]
+
+[node name="Card" type="Node2D" unique_id=1558260915]
+script = ExtResource("1_5o1v1")
+
+[node name="cardFace" type="Sprite2D" parent="." unique_id=1414493483]
+z_index = 1
+texture = ExtResource("2_103l1")
+
+[node name="Rank" type="Label" parent="cardFace" unique_id=1758563631]
+offset_left = -39.0
+offset_top = -64.0
+offset_right = -22.0
+offset_bottom = -41.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank2" type="Label" parent="cardFace" unique_id=684351413]
+offset_left = 41.0
+offset_top = 63.0
+offset_right = 58.0
+offset_bottom = 86.0
+rotation = 3.1415927
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Suit" type="Label" parent="cardFace" unique_id=1515194746]
+offset_left = -20.0
+offset_top = -33.0
+offset_right = 20.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "H"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cardBack" type="Sprite2D" parent="." unique_id=2005046604]
+texture = ExtResource("3_xh4nr")

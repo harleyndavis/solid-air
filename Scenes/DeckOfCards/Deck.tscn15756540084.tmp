@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ba5xhs5rwe15a"]
+
+[ext_resource type="Script" uid="uid://dvqymdeagn6yb" path="res://Scenes/DeckOfCards/deck.gd" id="1_48ri8"]
+[ext_resource type="Texture2D" uid="uid://badlsm0re1cgf" path="res://CardBack.png" id="2_o14wo"]
+
+[node name="Deck" type="Node2D" unique_id=623329177]
+script = ExtResource("1_48ri8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1328810002]
+visible = false
+texture = ExtResource("2_o14wo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2135845426]
+visible = false
+position = Vector2(-3, -3)
+texture = ExtResource("2_o14wo")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=868435921]
+visible = false
+position = Vector2(-6, -6)
+texture = ExtResource("2_o14wo")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=795953737]
+visible = false
+position = Vector2(-9, -9)
+texture = ExtResource("2_o14wo")

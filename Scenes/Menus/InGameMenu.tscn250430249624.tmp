@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dh67pc0xhrsij"]
+
+[ext_resource type="Script" uid="uid://b45njtit7qdmu" path="res://Scenes/Menus/in_game_menu.gd" id="1_ra8e5"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=1909179858]
+process_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -4.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_ra8e5")
+
+[node name="MainMenu" type="Button" parent="." unique_id=717004910]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Main Menu"
+
+[node name="NewGame" type="Button" parent="." unique_id=1914638062]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "New Game"
+
+[node name="Resume" type="Button" parent="." unique_id=732266377]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Resume
+"

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://4nmsjs50vski"]
+
+[ext_resource type="Script" uid="uid://bv0cyrcpc5xmt" path="res://Scenes/Levels/CardPosition.gd" id="1_6nfu4"]
+[ext_resource type="Texture2D" uid="uid://b1q7b5wlx25e2" path="res://CardPosition.png" id="1_7jxi4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6nfu4"]
+
+[node name="CardPositionPanel" type="Panel" unique_id=516060283]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6nfu4")
+script = ExtResource("1_6nfu4")
+
+[node name="CardPositionSprite" type="Sprite2D" parent="." unique_id=92494522]
+position = Vector2(63, 101)
+texture = ExtResource("1_7jxi4")

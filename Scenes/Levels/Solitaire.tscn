@@ -1,0 +1,192 @@
+[gd_scene format=3 uid="uid://dj83tdck2e47c"]
+
+[ext_resource type="Script" uid="uid://crhi2c10v43g4" path="res://Scenes/Levels/Solitaire.gd" id="1_gdbg0"]
+[ext_resource type="PackedScene" uid="uid://ba5xhs5rwe15a" path="res://Scenes/DeckOfCards/Deck.tscn" id="3_jikcs"]
+[ext_resource type="PackedScene" uid="uid://4nmsjs50vski" path="res://Scenes/Levels/CardPosition.tscn" id="4_gdbg0"]
+[ext_resource type="PackedScene" uid="uid://dh67pc0xhrsij" path="res://Scenes/Menus/InGameMenu.tscn" id="5_jikcs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gdbg0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwm87"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v85k4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djkj0"]
+size = Vector2(100, 140)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_caf6w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x80d1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwqgx"]
+
+[node name="Solitaire" type="MarginContainer" unique_id=722009210]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gdbg0")
+
+[node name="PlayScreenControl" type="Control" parent="." unique_id=1251947490]
+layout_mode = 2
+
+[node name="PlayScreenVbox" type="VBoxContainer" parent="PlayScreenControl" unique_id=1632535957]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="ScoringDeckHbox" type="HBoxContainer" parent="PlayScreenControl/PlayScreenVbox" unique_id=806943726]
+custom_minimum_size = Vector2(0, 168)
+layout_mode = 2
+
+[node name="EmptyPanel" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=590565094]
+light_mask = 0
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_gdbg0")
+
+[node name="ScorePositionPanel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=516060283 instance=ExtResource("4_gdbg0")]
+layout_mode = 2
+
+[node name="ScorePositionPanel2" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=1797832473 instance=ExtResource("4_gdbg0")]
+layout_mode = 2
+
+[node name="ScorePositionPanel3" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=1786503171 instance=ExtResource("4_gdbg0")]
+layout_mode = 2
+
+[node name="ScorePositionPanel4" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=1981153569 instance=ExtResource("4_gdbg0")]
+layout_mode = 2
+
+[node name="EmptyPanel2" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=1854853908]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hwm87")
+
+[node name="DrawnPositionPanel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=952225198 instance=ExtResource("4_gdbg0")]
+layout_mode = 2
+position_type = 3
+
+[node name="CardPositionSprite" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DrawnPositionPanel" index="0" unique_id=92494522]
+position = Vector2(-85, 0)
+scale = Vector2(1.65, 1)
+
+[node name="CollisionShape2D" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DrawnPositionPanel/Area2D" parent_id_path=PackedInt32Array(952225198, 485050931) index="0" unique_id=2140223389]
+position = Vector2(22.5, 65)
+
+[node name="DeckPosition" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=1223401154]
+z_index = -72
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v85k4")
+
+[node name="CardPositionPanel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DeckPosition" unique_id=494077773 instance=ExtResource("4_gdbg0")]
+layout_mode = 0
+position_type = 2
+
+[node name="Label" type="Label" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DeckPosition/CardPositionPanel" unique_id=538267330]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.016666668
+anchor_top = 0.53571427
+anchor_right = 0.016666668
+anchor_bottom = 0.53571427
+offset_left = 7.0
+offset_top = -15.0
+offset_right = 107.0
+offset_bottom = 36.21953
+scale = Vector2(1, 0.41)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 29
+text = "Shuffle"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Deck" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DeckPosition" unique_id=623329177 instance=ExtResource("3_jikcs")]
+position = Vector2(60, 85)
+
+[node name="DrawnCards" type="Node" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DeckPosition" unique_id=1276032655]
+
+[node name="Area2D" type="Area2D" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DeckPosition" unique_id=1000722545]
+position = Vector2(60, 84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DeckPosition/Area2D" unique_id=171285238]
+shape = SubResource("RectangleShape2D_djkj0")
+
+[node name="EmptyPanel5" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=170961747]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_caf6w")
+
+[node name="MainPlayHbox" type="HBoxContainer" parent="PlayScreenControl/PlayScreenVbox" unique_id=735738971]
+custom_minimum_size = Vector2(0, 168)
+layout_direction = 2
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="EmptyPanel" type="Panel" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=1530431986]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_x80d1")
+
+[node name="CardPositionPanel1" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=131001818 instance=ExtResource("4_gdbg0")]
+layout_mode = 2
+position_type = 1
+
+[node name="CardPositionPanel2" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=1304789116 instance=ExtResource("4_gdbg0")]
+layout_mode = 2
+position_type = 1
+
+[node name="CardPositionPanel3" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=1471549092 instance=ExtResource("4_gdbg0")]
+layout_mode = 2
+position_type = 1
+
+[node name="CardPositionPanel4" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=1624612573 instance=ExtResource("4_gdbg0")]
+layout_mode = 2
+position_type = 1
+
+[node name="CardPositionPanel5" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=1322377564 instance=ExtResource("4_gdbg0")]
+layout_mode = 2
+position_type = 1
+
+[node name="CardPositionPanel6" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=2047033257 instance=ExtResource("4_gdbg0")]
+layout_mode = 2
+position_type = 1
+
+[node name="CardPositionPanel7" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=1903616618 instance=ExtResource("4_gdbg0")]
+layout_mode = 2
+position_type = 1
+
+[node name="EmptyPanel2" type="Panel" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=215596435]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jwqgx")
+
+[node name="Play Menu" parent="PlayScreenControl" unique_id=1909179858 instance=ExtResource("5_jikcs")]
+z_index = 100
+layout_mode = 1
+offset_left = -48.0
+offset_top = -33.0
+offset_right = 48.0
+offset_bottom = 33.0
+alignment = 1
+
+[editable path="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DrawnPositionPanel"]

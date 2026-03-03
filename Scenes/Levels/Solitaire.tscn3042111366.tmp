@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://dj83tdck2e47c"]
+
+[ext_resource type="Texture2D" uid="uid://b1q7b5wlx25e2" path="res://CardPosition.png" id="1_djkj0"]
+[ext_resource type="Script" uid="uid://crhi2c10v43g4" path="res://Scenes/Levels/solitaire.gd" id="1_gdbg0"]
+[ext_resource type="PackedScene" uid="uid://ba5xhs5rwe15a" path="res://Scenes/DeckOfCards/Deck.tscn" id="3_jikcs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djkj0"]
+size = Vector2(100, 140)
+
+[node name="Solitaire" type="Node2D" unique_id=789484153]
+script = ExtResource("1_gdbg0")
+
+[node name="PlayScreenControl" type="Control" parent="." unique_id=1251947490]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_vertical = 3
+
+[node name="PlayScreenVbox" type="VBoxContainer" parent="PlayScreenControl" unique_id=1632535957]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ScoringDeckHbox" type="HBoxContainer" parent="PlayScreenControl/PlayScreenVbox" unique_id=806943726]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="EmptyPanel" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=590565094]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScoringPosition1" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=78809882]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScoringPosition1Sprite" type="Sprite2D" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/ScoringPosition1" unique_id=1206817421]
+position = Vector2(63, 101)
+texture = ExtResource("1_djkj0")
+
+[node name="ScoringPosition2" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=742269762]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScoringPosition1Sprite" type="Sprite2D" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/ScoringPosition2" unique_id=623118969]
+position = Vector2(62.5, 100)
+texture = ExtResource("1_djkj0")
+
+[node name="ScoringPosition3" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=1610990996]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPosition3Sprite" type="Sprite2D" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/ScoringPosition3" unique_id=1556683378]
+position = Vector2(62.5, 100)
+texture = ExtResource("1_djkj0")
+
+[node name="ScoringPosition4" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=1290225433]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPosition4Sprite" type="Sprite2D" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/ScoringPosition4" unique_id=1614920606]
+position = Vector2(62.5, 99)
+texture = ExtResource("1_djkj0")
+
+[node name="EmptyPanel2" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=1854853908]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EmptyPanel3" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=142010917]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DeckPosition" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=1223401154]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DeckLocation" type="Sprite2D" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DeckPosition" unique_id=1166958212]
+position = Vector2(62.5, 108)
+texture = ExtResource("1_djkj0")
+
+[node name="Deck" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DeckPosition/DeckLocation" unique_id=623329177 instance=ExtResource("3_jikcs")]
+
+[node name="DrawnCards" type="Node" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DeckPosition/DeckLocation" unique_id=1276032655]
+
+[node name="Area2D" type="Area2D" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DeckPosition/DeckLocation" unique_id=1000722545]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DeckPosition/DeckLocation/Area2D" unique_id=171285238]
+shape = SubResource("RectangleShape2D_djkj0")
+
+[node name="Label" type="Label" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox/DeckPosition/DeckLocation" unique_id=538267330]
+offset_left = -49.99998
+offset_top = -15.0
+offset_right = 50.00002
+offset_bottom = 36.21953
+scale = Vector2(1, 0.41)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 29
+text = "Shuffle"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="EmptyPanel5" type="Panel" parent="PlayScreenControl/PlayScreenVbox/ScoringDeckHbox" unique_id=170961747]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MainPlayHbox" type="HBoxContainer" parent="PlayScreenControl/PlayScreenVbox" unique_id=735738971]
+layout_direction = 2
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="EmptyPanel" type="Panel" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=1530431986]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPosition1Panel" type="Panel" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=1050300653]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPosition1Sprite" type="Sprite2D" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox/CardPosition1Panel" unique_id=121899598]
+position = Vector2(63, 101)
+texture = ExtResource("1_djkj0")
+
+[node name="CardPosition2Panel" type="Panel" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=406769622]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPosition2Sprite" type="Sprite2D" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox/CardPosition2Panel" unique_id=1604601342]
+position = Vector2(62.5, 100)
+texture = ExtResource("1_djkj0")
+
+[node name="CardPosition3Panel" type="Panel" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=1047477395]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPosition3Sprite" type="Sprite2D" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox/CardPosition3Panel" unique_id=466043138]
+position = Vector2(62.5, 100)
+texture = ExtResource("1_djkj0")
+
+[node name="CardPosition4Panel" type="Panel" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=1900177252]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPosition4Sprite" type="Sprite2D" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox/CardPosition4Panel" unique_id=1163312973]
+position = Vector2(62.5, 99)
+texture = ExtResource("1_djkj0")
+
+[node name="CardPosition5Panel" type="Panel" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=1776070584]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPosition5Sprite" type="Sprite2D" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox/CardPosition5Panel" unique_id=1428225724]
+position = Vector2(62.5, 99)
+texture = ExtResource("1_djkj0")
+
+[node name="CardPosition6Panel" type="Panel" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=774733903]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPosition6Sprite" type="Sprite2D" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox/CardPosition6Panel" unique_id=1504305761]
+position = Vector2(62.5, 99)
+texture = ExtResource("1_djkj0")
+
+[node name="CardPosition7Panel" type="Panel" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=1162705785]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CardPosition7Sprite" type="Sprite2D" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox/CardPosition7Panel" unique_id=788836927]
+position = Vector2(62.5, 99)
+texture = ExtResource("1_djkj0")
+
+[node name="EmptyPanel2" type="Panel" parent="PlayScreenControl/PlayScreenVbox/MainPlayHbox" unique_id=215596435]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

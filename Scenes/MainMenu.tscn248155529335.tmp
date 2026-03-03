@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://co7pwyqvnr54g"]
+
+[ext_resource type="Script" uid="uid://bae7f7l66tvwu" path="res://Scenes/start_game_button.gd" id="1_tt5f1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bnhvo"]
+texture_margin_left = 80.0
+texture_margin_top = 120.0
+texture_margin_right = 80.0
+texture_margin_bottom = 120.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tt5f1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tt5f1"]
+
+[node name="MarginContainer" type="PanelContainer" unique_id=2088395353]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bnhvo")
+
+[node name="TitleText" type="RichTextLabel" parent="." unique_id=1213988213]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tt5f1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tt5f1")
+bbcode_enabled = true
+text = "[center][font_size=150][rainbow speed=0.2][b]Solid Air
+"
+
+[node name="StartGameButton" type="Button" parent="." unique_id=1733799501]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+text = "Start Game"
+script = ExtResource("1_tt5f1")

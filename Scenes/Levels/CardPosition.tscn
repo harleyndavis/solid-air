@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://4nmsjs50vski"]
+
+[ext_resource type="Script" uid="uid://bv0cyrcpc5xmt" path="res://Scenes/Levels/CardPosition.gd" id="1_6nfu4"]
+[ext_resource type="Texture2D" uid="uid://b1q7b5wlx25e2" path="res://Images/CardPosition.png" id="1_7jxi4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6nfu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xuqi"]
+size = Vector2(111, 148)
+
+[node name="CardPositionPanel" type="Panel" unique_id=516060283]
+z_index = -1
+offset_right = 120.0
+offset_bottom = 168.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6nfu4")
+script = ExtResource("1_6nfu4")
+
+[node name="CardPositionSprite" type="Sprite2D" parent="." unique_id=92494522]
+texture = ExtResource("1_7jxi4")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=485050931]
+z_index = -1
+position = Vector2(14, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2140223389]
+z_index = -1
+position = Vector2(46.5, 65)
+shape = SubResource("RectangleShape2D_0xuqi")

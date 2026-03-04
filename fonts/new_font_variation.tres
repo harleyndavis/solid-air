@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" format=3 uid="uid://c7o2jqyeag4v"]
+
+[ext_resource type="FontFile" uid="uid://by6naerppxtok" path="res://fonts/NotoSansSymbols2-Regular.ttf" id="1_ej4o4"]
+
+[resource]
+base_font = ExtResource("1_ej4o4")

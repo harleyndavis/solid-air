@@ -26,7 +26,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
 
       - name: Publish to Itch
-        uses: Ayowel/butler-to-itch@v1.0.0
+        uses: Ayowel/butler-to-itch@v1.3.0
         with:
           butler_key: ${{secrets.ITCH_IO_API}}
           itch_user: ${{secrets.ITCHIO_USER}}

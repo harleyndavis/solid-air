@@ -28,8 +28,8 @@ jobs:
       - name: Publish to Itch
         uses: Ayowel/butler-to-itch@v1.0.0
         with:
-          butler_key: ${{secrets.ITCHIO_TOKEN}}
-          itch_user: struhy-xd
-          itch_game: painted-mosaics
+          butler_key: ${{secrets.ITCHIO_API}}
+          itch_user: ${{secrets.ITCHIO_USER}}
+          itch_game: ${{secrets.ITCHIO_GAME}}
           version: ${{ github.ref_name }}
           files: "${{ steps.export.outputs.archive_directory }}/mosaics-web.zip"

@@ -32,4 +32,4 @@ jobs:
           itch_user: ${{secrets.ITCHIO_USER}}
           itch_game: ${{secrets.ITCHIO_GAME}}
           version: ${{ github.ref_name }}
-          files: "${{ steps.export.outputs.archive_directory }}/${{secrets.ITCHIO_GAME}}.zip"
+          files: "${{ steps.export.outputs.archive_directory }}/Web.zip"

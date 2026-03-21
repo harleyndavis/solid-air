@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://ba5xhs5rwe15a" path="res://Scenes/DeckOfCards/Deck.tscn" id="3_jikcs"]
 [ext_resource type="PackedScene" uid="uid://4nmsjs50vski" path="res://Scenes/Levels/CardPosition.tscn" id="4_gdbg0"]
 [ext_resource type="PackedScene" uid="uid://dh67pc0xhrsij" path="res://Scenes/Menus/InGameMenu.tscn" id="5_jikcs"]
-[ext_resource type="FontFile" uid="uid://by6naerppxtok" path="res://fonts/NotoSansSymbols2-Regular.ttf" id="6_tilkp"]
 [ext_resource type="Script" uid="uid://c824jtg3idt6m" path="res://Scenes/Levels/menu_button.gd" id="6_u2es2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u2es2"]
@@ -228,9 +227,8 @@ offset_right = 535.0
 offset_bottom = -258.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("6_tilkp")
 theme_override_font_sizes/font_size = 50
-text = "☰"
+text = "⚙️"
 flat = true
 script = ExtResource("6_u2es2")
 

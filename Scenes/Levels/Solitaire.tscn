@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ba5xhs5rwe15a" path="res://Scenes/DeckOfCards/Deck.tscn" id="3_jikcs"]
 [ext_resource type="PackedScene" uid="uid://4nmsjs50vski" path="res://Scenes/Levels/CardPosition.tscn" id="4_gdbg0"]
 [ext_resource type="PackedScene" uid="uid://dh67pc0xhrsij" path="res://Scenes/Menus/InGameMenu.tscn" id="5_jikcs"]
+[ext_resource type="FontFile" uid="uid://by6naerppxtok" path="res://fonts/NotoSansSymbols2-Regular.ttf" id="6_tilkp"]
 [ext_resource type="Script" uid="uid://c824jtg3idt6m" path="res://Scenes/Levels/menu_button.gd" id="6_u2es2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u2es2"]
@@ -40,6 +41,9 @@ func _process(delta: float) -> void:
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x80d1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwqgx"]
+
+[sub_resource type="FontVariation" id="FontVariation_tilkp"]
+base_font = ExtResource("6_tilkp")
 
 [node name="Panel" type="ColorRect" unique_id=712036828]
 z_index = -1
@@ -227,6 +231,7 @@ offset_right = 535.0
 offset_bottom = -258.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_tilkp")
 theme_override_font_sizes/font_size = 50
 text = "⚙"
 flat = true

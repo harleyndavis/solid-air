@@ -22,11 +22,16 @@ func _process(delta: float) -> void:
 			stacked_cards[i].global_position.y = card_being_dragged.global_position.y + (20 * (i+1))
 
 # Handle input events.
-func _input(event):
+func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		print("escape pressed, open menu")
 		$"PlayScreenControl/Play Menu".pause_game()
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		# Ignore if hovering over UI
+		var hovered = get_viewport().gui_get_hovered_control()
+		if hovered and hovered.is_in_group("UI_Group"):
+			print(hovered)
+			return  # let the button handle it
 		if event.pressed:
 			# Raycast check for card
 			var result = raycast_check_for_card()

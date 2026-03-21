@@ -21,7 +21,7 @@ script/source = "extends ColorRect
 @onready var menu_button = $MenuButton
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	menu_button.connect(\"menu_pressed\", Callable(menu_scene, \"toggle_menu\"))
+	menu_button.connect(\"menu_pressed\", menu_scene, \"toggle_menu\", [], 0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -229,7 +229,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "⚙"
-flat = true
 script = ExtResource("6_u2es2")
 
 [connection signal="pressed" from="MenuButton" to="Solitaire" method="_on_button_pressed"]

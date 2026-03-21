@@ -229,7 +229,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "⚙"
-flat = true
 script = ExtResource("6_u2es2")
 
 [connection signal="pressed" from="MenuButton" to="Solitaire" method="_on_button_pressed"]

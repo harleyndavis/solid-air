@@ -18,12 +18,15 @@ func _on_main_menu_pressed():
 	
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		if get_tree().paused:
-			resume_game()
-		else:
-			pause_game()
+		toggle_menu()
 			
 		get_viewport().set_input_as_handled()
+		
+func toggle_menu():
+	if get_tree().paused:
+		resume_game()
+	else:
+		pause_game()
 
 func pause_game():
 	get_tree().paused = true

@@ -1,9 +1,34 @@
 [gd_scene format=3 uid="uid://rcxc8brff6y"]
 
 [ext_resource type="Script" uid="uid://dljg3gcfm8qbb" path="res://Scenes/PlayingCard/Card.gd" id="1_5o1v1"]
-[ext_resource type="Texture2D" uid="uid://bbvw4soeyxhkc" path="res://Images/CardFace.png" id="2_103l1"]
 [ext_resource type="FontVariation" uid="uid://c7o2jqyeag4v" path="res://fonts/new_font_variation.tres" id="3_ixcsy"]
 [ext_resource type="Texture2D" uid="uid://badlsm0re1cgf" path="res://Images/CardBack.png" id="3_xh4nr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixcsy"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 19
+corner_radius_top_right = 19
+corner_radius_bottom_right = 19
+corner_radius_bottom_left = 19
+shadow_color = Color(0.16206557, 0.1620656, 0.16206557, 0.93333334)
+shadow_size = 1
+
+[sub_resource type="FontVariation" id="FontVariation_vfwvw"]
+opentype_features = {
+1953396077: 1
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv0u8"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 19
+corner_radius_top_right = 19
+corner_radius_bottom_right = 19
+corner_radius_bottom_left = 19
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfwvw"]
 size = Vector2(100, 140)
@@ -11,41 +36,60 @@ size = Vector2(100, 140)
 [node name="Card" type="Node2D" unique_id=1558260915]
 script = ExtResource("1_5o1v1")
 
-[node name="cardFace" type="Sprite2D" parent="." unique_id=1414493483]
+[node name="cardFace" type="Panel" parent="." unique_id=1916778285]
 z_index = 1
-texture = ExtResource("2_103l1")
+offset_left = -50.0
+offset_top = -70.0
+offset_right = 50.0
+offset_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ixcsy")
 
-[node name="Rank" type="Label" parent="cardFace" unique_id=1758563631]
-offset_left = -38.0
-offset_top = -62.0
-offset_right = -19.0
-offset_bottom = -39.0
+[node name="Rank" type="Label" parent="cardFace" unique_id=1818134864]
+z_index = 1
+layout_mode = 1
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 34.0
+offset_bottom = 33.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_vfwvw")
 text = "10"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Rank2" type="Label" parent="cardFace" unique_id=684351413]
-offset_left = 38.0
-offset_top = 62.0
-offset_right = 57.0
-offset_bottom = 85.0
+[node name="Rank2" type="Label" parent="cardFace" unique_id=592266342]
+z_index = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -10.0
+offset_right = 4.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 0
 rotation = 3.1415927
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Suit" type="Label" parent="cardFace" unique_id=1515194746]
+[node name="Suit" type="Label" parent="cardFace" unique_id=687028423]
+z_index = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -116.5
-offset_right = -25.0
-offset_bottom = -5.5
+offset_left = -23.5
+offset_top = -47.5
+offset_right = 23.5
+offset_bottom = 63.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -56,6 +100,22 @@ theme_override_font_sizes/font_size = 65
 text = "♠"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="cardFace" unique_id=1788761915]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Panel" type="Panel" parent="cardFace/MarginContainer" unique_id=353914391]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fv0u8")
 
 [node name="cardBack" type="Sprite2D" parent="." unique_id=2005046604]
 texture = ExtResource("3_xh4nr")

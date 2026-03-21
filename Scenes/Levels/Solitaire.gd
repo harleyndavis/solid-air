@@ -62,7 +62,7 @@ func _input(event):
 					card_being_dragged.z_index = dragged_card_started_z_index
 					for i in range(stacked_cards.size()):
 						stacked_cards[i].position.x = card_being_dragged.position.x
-						stacked_cards[i].position.y = card_being_dragged.position.y + (20 * (i + 1))
+						stacked_cards[i].position.y = card_being_dragged.position.y + (30 * (i + 1))
 						stacked_cards[i].z_index = dragged_card_started_z_index + i + 1
 					
 				stacked_cards = []
@@ -96,9 +96,14 @@ func raycast_check_for_card():
 		var clicked_deck = false
 		
 		for node in results:
+			print(node.collider.get_parent())
 			var node_parent = node.collider.get_parent()
-			if node_parent == deck_location:
+			if ( 
+				node_parent is CardPosition
+				and node_parent.position_type == CardPosition.PositionType.Deck
+			):
 				clicked_deck = true
+				
 			# if not visible, can't click on it.
 			if node_parent.visible and node_parent.z_index > top_z_index:
 				top_z_index = node_parent.z_index

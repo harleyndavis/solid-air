@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://co7pwyqvnr54g"]
 
+[ext_resource type="StyleBox" uid="uid://doeqcamllnmf0" path="res://Scenes/Menus/new_style_box_flat.tres" id="1_b42ut"]
 [ext_resource type="Shader" uid="uid://bpgu0k86nain8" path="res://Scenes/Levels/Solitaire.gdshader" id="1_tfrft"]
 [ext_resource type="Script" uid="uid://bae7f7l66tvwu" path="res://Scenes/Menus/start_game_button.gd" id="1_v3fht"]
 [ext_resource type="PackedScene" uid="uid://rcxc8brff6y" path="res://Scenes/PlayingCard/Card.tscn" id="4_tfrft"]
@@ -24,7 +25,6 @@ texture_margin_bottom = 120.0
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tt5f1"]
 
 [node name="Panel" type="ColorRect" unique_id=1658850757]
-process_mode = 3
 material = SubResource("ShaderMaterial_uv623")
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,6 +35,33 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
+[node name="MarginContainer" type="PanelContainer" parent="." unique_id=2088395353]
+material = SubResource("CanvasItemMaterial_b42ut")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bnhvo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=639699246]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TitleText" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1213988213]
+clip_contents = false
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tt5f1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tt5f1")
+bbcode_enabled = true
+text = "[center][font_size=150][rainbow speed=0.2][b]Solid Air
+"
+
 [node name="Control" type="Control" parent="." unique_id=1709094371]
 z_index = 500
 anchors_preset = 0
@@ -42,10 +69,9 @@ offset_left = 80.0
 offset_top = 424.0
 offset_right = 1072.0
 offset_bottom = 424.0
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="StartGameButton" type="Button" parent="Control" unique_id=1733799501]
-process_mode = 3
 custom_minimum_size = Vector2(100, 140)
 layout_direction = 4
 layout_mode = 1
@@ -55,9 +81,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -73.0
-offset_top = -42.000008
+offset_top = -41.999996
 offset_right = 27.0
-offset_bottom = 97.99999
+offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.43633232
@@ -66,6 +92,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_mode = 0
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("1_b42ut")
 flat = true
 script = ExtResource("1_v3fht")
 
@@ -112,35 +139,10 @@ mouse_filter = 2
 [node name="cardBack" parent="Control/StartGameButton/Card" index="1" unique_id=2005046604]
 visible = false
 
-[node name="MarginContainer" type="PanelContainer" parent="." unique_id=1391234923]
-material = SubResource("CanvasItemMaterial_b42ut")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_bnhvo")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1823734304]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="TitleText" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1726023005]
-clip_contents = false
-custom_minimum_size = Vector2(300, 300)
-layout_mode = 2
-focus_mode = 0
-mouse_filter = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tt5f1")
-theme_override_styles/focus = SubResource("StyleBoxTexture_tt5f1")
-bbcode_enabled = true
-text = "[center][font_size=150][rainbow speed=0.2][b]Solid Air
-"
+[node name="Area2D" parent="Control/StartGameButton/Card" index="2" unique_id=88929512]
+visible = false
 
 [connection signal="mouse_entered" from="Control/StartGameButton" to="Control/StartGameButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Control/StartGameButton" to="Control/StartGameButton" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Control/StartGameButton/Card/cardFace/MarginContainer/Panel" to="Control/StartGameButton" method="_on_panel_mouse_entered"]
 
 [editable path="Control/StartGameButton/Card"]

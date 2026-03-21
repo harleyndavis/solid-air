@@ -12,7 +12,7 @@ func _ready() -> void:
 	print("Deck _ready")
 	var location = 0
 	for suit in suits:
-		for rank in ranks:
+		for rank in ranks:			
 			var new_card = card_scene.instantiate()
 			new_card.suit = suit
 			new_card.rank = rank
@@ -22,6 +22,7 @@ func _ready() -> void:
 			new_card.position = Vector2(-location/2.0, -location/2.0)
 			add_child(new_card, true)
 			location += 1
+	
 			
 func create_card_name(suit, rank):
 	var name: String = ""

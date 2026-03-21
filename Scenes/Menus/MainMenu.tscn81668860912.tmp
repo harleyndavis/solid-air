@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://bpgu0k86nain8" path="res://Scenes/Levels/Solitaire.gdshader" id="1_tfrft"]
 [ext_resource type="Script" uid="uid://bae7f7l66tvwu" path="res://Scenes/Menus/start_game_button.gd" id="1_v3fht"]
+[ext_resource type="Script" uid="uid://dc1fxjsnky3yg" path="res://Scenes/Menus/main_menu.gd" id="2_tfrft"]
 [ext_resource type="PackedScene" uid="uid://rcxc8brff6y" path="res://Scenes/PlayingCard/Card.tscn" id="4_tfrft"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uv623"]
@@ -34,6 +35,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
+script = ExtResource("2_tfrft")
 
 [node name="Control" type="Control" parent="." unique_id=1709094371]
 z_index = 500
@@ -112,6 +114,66 @@ mouse_filter = 2
 [node name="cardBack" parent="Control/StartGameButton/Card" index="1" unique_id=2005046604]
 visible = false
 
+[node name="Control2" type="Control" parent="." unique_id=1193150221]
+anchors_preset = 0
+offset_left = 674.0
+offset_top = 299.0
+offset_right = 774.0
+offset_bottom = 439.0
+
+[node name="Button" type="Button" parent="Control2" unique_id=2103147957]
+custom_minimum_size = Vector2(100, 140)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v3fht")
+
+[node name="Card" parent="Control2/Button" unique_id=584197847 instance=ExtResource("4_tfrft")]
+suit = "Start Game"
+isFaceUp = true
+
+[node name="cardFace" parent="Control2/Button/Card" index="0" unique_id=1916778285]
+z_index = 3
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 100.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Rank" parent="Control2/Button/Card/cardFace" index="0" unique_id=1818134864]
+z_index = 2
+text = "SG"
+
+[node name="Rank2" parent="Control2/Button/Card/cardFace" index="1" unique_id=592266342]
+z_index = 2
+text = "SG"
+
+[node name="Suit" parent="Control2/Button/Card/cardFace" index="2" unique_id=687028423]
+z_index = 2
+theme_override_constants/line_spacing = -18
+theme_override_font_sizes/font_size = 25
+text = "Start
+Game"
+
+[node name="MarginContainer" parent="Control2/Button/Card/cardFace" index="3" unique_id=1788761915]
+z_index = 1
+mouse_filter = 2
+
+[node name="Panel" parent="Control2/Button/Card/cardFace/MarginContainer" index="0" unique_id=353914391]
+mouse_filter = 2
+
+[node name="cardBack" parent="Control2/Button/Card" index="1" unique_id=2005046604]
+visible = false
+
 [node name="MarginContainer" type="PanelContainer" parent="." unique_id=1391234923]
 material = SubResource("CanvasItemMaterial_b42ut")
 layout_mode = 1
@@ -142,5 +204,8 @@ text = "[center][font_size=150][rainbow speed=0.2][b]Solid Air
 [connection signal="mouse_entered" from="Control/StartGameButton" to="Control/StartGameButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Control/StartGameButton" to="Control/StartGameButton" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Control/StartGameButton/Card/cardFace/MarginContainer/Panel" to="Control/StartGameButton" method="_on_panel_mouse_entered"]
+[connection signal="mouse_entered" from="Control2/Button" to="Control/StartGameButton" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Control2/Button" to="Control/StartGameButton" method="_on_button_mouse_exited"]
 
 [editable path="Control/StartGameButton/Card"]
+[editable path="Control2/Button/Card"]
